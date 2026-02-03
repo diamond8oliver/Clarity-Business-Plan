@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Clarity Cannabis Wellness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2ecc71;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2ecc71;
+        }
+
+        .cta-button {
+            background: #2ecc71;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .page-hero {
+            margin-top: 80px;
+            padding: 5rem 5% 3rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: #546e7a;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Product Grid */
+        .products-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 350px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #f5f7fa 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: #2ecc71;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .bottle-container {
+            width: 180px;
+            height: 300px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            border: 3px solid #e0e0e0;
+        }
+
+        .bottle-cap {
+            width: 90px;
+            height: 35px;
+            background: #2ecc71;
+            border-radius: 15px 15px 5px 5px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(46, 204, 113, 0.3);
+        }
+
+        .bottle-label {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .bottle-label h3 {
+            color: #2ecc71;
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .bottle-label .dosage {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .bottle-label p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .product-info .price {
+            font-size: 1.5rem;
+            color: #2ecc71;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .product-info .description {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            color: #546e7a;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            color: #2ecc71;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .buy-button {
+            width: 100%;
+            background: #2ecc71;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .buy-button:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .comparison-table {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: #2ecc71;
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .check {
+            color: #2ecc71;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .cross {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .faq-item p {
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="clarity-landing-page.html" class="logo">Clarity</a>
+        <ul class="nav-links">
+            <li><a href="clarity-product-page.html">Product</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="clarity-science-page.html">Science</a></li>
+            <li><a href="clarity-about-page.html">About</a></li>
+        </ul>
+        <a href="#" class="cta-button">Get Started</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>Our Products</h1>
+        <p>Pharmaceutical-grade THC capsules designed for the modern wellness routine. Choose the strength that's right for you.</p>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section">
+        <div class="product-grid">
+            <!-- Product 1: Starter -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">Most Popular</div>
+                    <div class="bottle-container">
+                        <div class="bottle-cap"></div>
+                        <div class="bottle-label">
+                            <h3>Clarity</h3>
+                            <div class="dosage">5mg</div>
+                            <p>30 Capsules</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Clarity Starter</h3>
+                    <div class="price">$45.00</div>
+                    <p class="description">Perfect for first-time users or those who prefer microdosing. Our 5mg capsules provide gentle, controlled effects ideal for daily wellness.</p>
+                    <ul class="product-features">
+                        <li>5mg THC per capsule</li>
+                        <li>30-day supply (1 per day)</li>
+                        <li>Effects in 5-15 minutes</li>
+                        <li>4-6 hour duration</li>
+                        <li>Lab tested & certified</li>
+                    </ul>
+                    <button class="buy-button">Find a Dispensary</button>
+                </div>
+            </div>
+
+            <!-- Product 2: Regular -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="bottle-container">
+                        <div class="bottle-cap"></div>
+                        <div class="bottle-label">
+                            <h3>Clarity</h3>
+                            <div class="dosage">10mg</div>
+                            <p>30 Capsules</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Clarity Regular</h3>
+                    <div class="price">$65.00</div>
+                    <p class="description">Our standard strength for experienced users seeking sustained relief from chronic pain, anxiety, or sleep issues.</p>
+                    <ul class="product-features">
+                        <li>10mg THC per capsule</li>
+                        <li>30-day supply (1 per day)</li>
+                        <li>Effects in 5-15 minutes</li>
+                        <li>6-8 hour duration</li>
+                        <li>Lab tested & certified</li>
+                    </ul>
+                    <button class="buy-button">Find a Dispensary</button>
+                </div>
+            </div>
+
+            <!-- Product 3: Focus -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">New</div>
+                    <div class="bottle-container" style="border-color: #3498db;">
+                        <div class="bottle-cap" style="background: #3498db;"></div>
+                        <div class="bottle-label">
+                            <h3>Clarity</h3>
+                            <div class="dosage">5mg</div>
+                            <p style="color: #3498db; font-weight: 600;">Focus Formula</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Clarity Focus</h3>
+                    <div class="price">$55.00</div>
+                    <p class="description">Enhanced with limonene terpenes for uplifting, creative energy. Perfect for daytime use when you need mental clarity with relaxation.</p>
+                    <ul class="product-features">
+                        <li>5mg THC + Limonene</li>
+                        <li>20 capsules</li>
+                        <li>Daytime formula</li>
+                        <li>Enhanced focus & creativity</li>
+                        <li>Lab tested & certified</li>
+                    </ul>
+                    <button class="buy-button">Find a Dispensary</button>
+                </div>
+            </div>
+
+            <!-- Product 4: Sleep -->
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="product-badge">New</div>
+                    <div class="bottle-container" style="border-color: #9b59b6;">
+                        <div class="bottle-cap" style="background: #9b59b6;"></div>
+                        <div class="bottle-label">
+                            <h3>Clarity</h3>
+                            <div class="dosage">10mg</div>
+                            <p style="color: #9b59b6; font-weight: 600;">Sleep Formula</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Clarity Sleep</h3>
+                    <div class="price">$65.00</div>
+                    <p class="description">Infused with myrcene terpenes for deep relaxation. Take 1 hour before bed for restful, uninterrupted sleep.</p>
+                    <ul class="product-features">
+                        <li>10mg THC + Myrcene</li>
+                        <li>20 capsules</li>
+                        <li>Nighttime formula</li>
+                        <li>Deep relaxation & sleep</li>
+                        <li>Lab tested & certified</li>
+                    </ul>
+                    <button class="buy-button">Find a Dispensary</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison-section">
+        <div class="section-header">
+            <h2>How Clarity Compares</h2>
+            <p>See why our capsules outperform traditional cannabis products</p>
+        </div>
+
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Clarity Capsules</th>
+                        <th>Traditional Edibles</th>
+                        <th>Smoking/Vaping</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Onset Time</strong></td>
+                        <td>5-15 minutes</td>
+                        <td>30-120 minutes</td>
+                        <td>2-5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Duration</strong></td>
+                        <td>4-8 hours</td>
+                        <td>4-8 hours</td>
+                        <td>2-4 hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lung Safe</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>No Odor</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Precise Dosing</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Discreet Use</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td>Moderate</td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Predictable Effects</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td>Moderate</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Easy to Use</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td>Requires practice</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-item">
+            <h3>How quickly will I feel the effects?</h3>
+            <p>Unlike traditional edibles that can take 60-120 minutes, our nano-emulsion technology delivers effects in just 5-15 minutes. This allows you to gauge your response in real-time and dose accordingly.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's the difference between 5mg and 10mg?</h3>
+            <p>5mg is perfect for beginners or those who prefer microdosing for gentle relaxation. 10mg is our standard strength for experienced users seeking stronger effects for pain management, sleep, or deeper relaxation.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I take Clarity capsules daily?</h3>
+            <p>Yes! Many of our users incorporate Clarity into their daily wellness routine, similar to taking a vitamin or supplement. Start with one capsule and adjust based on your needs.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How long do the effects last?</h3>
+            <p>Clarity capsules provide 4-8 hours of sustained effects, depending on dosage and individual metabolism. The 5mg Starter typically lasts 4-6 hours, while the 10mg Regular lasts 6-8 hours.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Are Clarity capsules safe?</h3>
+            <p>All Clarity products are manufactured in GMP-certified facilities and undergo rigorous third-party lab testing. Each batch is tested for potency, purity, and contaminants to ensure pharmaceutical-grade quality.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where can I buy Clarity?</h3>
+            <p>Clarity is available at licensed dispensaries in California, Colorado, Massachusetts, and Oregon. Use our dispensary locator to find a retailer near you.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo" style="margin-bottom: 1rem;">Clarity</div>
+        <p>&copy; 2026 Clarity Wellness. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">This product contains THC and is intended for adults 21+. Not for use by pregnant or nursing women.</p>
+    </footer>
+</body>
+</html>

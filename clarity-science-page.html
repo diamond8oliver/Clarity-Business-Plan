@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science - Clarity Cannabis Wellness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2ecc71;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2ecc71;
+        }
+
+        .cta-button {
+            background: #2ecc71;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        /* Hero */
+        .page-hero {
+            margin-top: 80px;
+            padding: 5rem 5% 3rem;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section.alt {
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .content-text h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text p {
+            color: #546e7a;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .content-text ul li {
+            padding: 0.75rem 0;
+            color: #546e7a;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .content-text ul li::before {
+            content: "→";
+            color: #2ecc71;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .content-visual {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f5f7fa 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .diagram {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .timeline-dot {
+            width: 60px;
+            height: 60px;
+            background: #2ecc71;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Comparison Charts */
+        .comparison-charts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .chart-card h4 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            width: 120px;
+            font-size: 0.9rem;
+            color: #546e7a;
+            font-weight: 500;
+        }
+
+        .bar-container {
+            flex: 1;
+            background: #ecf0f1;
+            border-radius: 10px;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            color: white;
+            font-weight: 600;
+            transition: width 1s ease;
+        }
+
+        /* Research Section */
+        .research-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .research-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .research-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .research-card p {
+            color: #7f8c8d;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .research-card .citation {
+            font-size: 0.85rem;
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-charts {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="clarity-landing-page.html" class="logo">Clarity</a>
+        <ul class="nav-links">
+            <li><a href="clarity-product-page.html">Product</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="clarity-science-page.html">Science</a></li>
+            <li><a href="clarity-about-page.html">About</a></li>
+        </ul>
+        <a href="#" class="cta-button">Get Started</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>The Science Behind Clarity</h1>
+        <p>Pharmaceutical-grade nano-emulsion technology that transforms how your body absorbs THC. Backed by research, proven by results.</p>
+    </section>
+
+    <!-- Nano-Emulsion Section -->
+    <section class="content-section">
+        <div class="content-grid">
+            <div class="content-text">
+                <h3>What is Nano-Emulsion Technology?</h3>
+                <p>Traditional THC edibles have a major flaw: they're poorly absorbed by your body. THC is fat-soluble, meaning it doesn't dissolve in water or blood. When you eat a regular edible, your liver has to process it through "first-pass metabolism," which destroys up to 80% of the THC before it ever reaches your bloodstream.</p>
+                <p><strong>Clarity's nano-emulsion technology changes everything.</strong></p>
+                <p>We break THC molecules down into nanoparticles—less than 200 nanometers in size—and make them water-soluble. This allows them to bypass slow digestion and absorb directly through your mucous membranes and stomach lining.</p>
+                <ul>
+                    <li>85% bioavailability (vs. 4-20% for regular edibles)</li>
+                    <li>Effects in 5-15 minutes (vs. 30-120 minutes)</li>
+                    <li>Predictable, consistent results every time</li>
+                </ul>
+            </div>
+            <div class="content-visual">
+                <div class="diagram">
+                    <h4 style="text-align: center; color: #2c3e50; margin-bottom: 2rem;">Absorption Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">5min</div>
+                            <div class="timeline-content">
+                                <h4>Clarity Nano-Emulsion</h4>
+                                <p>Initial effects begin. Water-soluble particles absorb rapidly.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: #3498db;">15min</div>
+                            <div class="timeline-content">
+                                <h4>Peak Absorption</h4>
+                                <p>Full effects reached. You're in control.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: #e74c3c;">60min</div>
+                            <div class="timeline-content">
+                                <h4>Traditional Edibles</h4>
+                                <p>First effects MAY begin for regular edibles.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: #e74c3c;">120min</div>
+                            <div class="timeline-content">
+                                <h4>Traditional Peak</h4>
+                                <p>Peak effects for edibles—if you haven't already taken more.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">The Numbers Speak</h2>
+        <p style="font-size: 1.2rem; opacity: 0.95;">Clinical data on nano-emulsion efficacy</p>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">85%</div>
+                <div class="stat-label">Bioavailability Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5-15</div>
+                <div class="stat-label">Minutes to Effect</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6-8</div>
+                <div class="stat-label">Hours Duration</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">0%</div>
+                <div class="stat-label">Lung Damage Risk</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Charts -->
+    <section class="content-section alt">
+        <div class="section-header">
+            <h2>Performance Comparison</h2>
+            <p>See how Clarity stacks up against other consumption methods</p>
+        </div>
+
+        <div class="comparison-charts">
+            <div class="chart-card">
+                <h4>Bioavailability (% THC Absorbed)</h4>
+                <div class="bar-chart">
+                    <div class="bar-row">
+                        <div class="bar-label">Clarity Capsules</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 85%;">85%</div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Smoking</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 30%; background: #95a5a6;">30%</div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Vaping</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 55%; background: #95a5a6;">55%</div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Regular Edibles</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 12%; background: #e74c3c;">12%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h4>Time to Effect (Minutes)</h4>
+                <div class="bar-chart">
+                    <div class="bar-row">
+                        <div class="bar-label">Clarity Capsules</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 15%;">5-15</div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Smoking</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 5%; background: #95a5a6;">2-5</div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Vaping</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 8%; background: #95a5a6;">3-8</div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Regular Edibles</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 90%; background: #e74c3c;">30-120</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="research-section">
+        <div class="section-header">
+            <h2>Backed by Research</h2>
+            <p>Our technology is supported by peer-reviewed scientific studies</p>
+        </div>
+
+        <div class="research-grid">
+            <div class="research-card">
+                <h4>Enhanced Bioavailability</h4>
+                <p>Nano-emulsion technology increases THC bioavailability from 4-20% (traditional oral) to approximately 85%, allowing for lower doses with equivalent effects.</p>
+                <p class="citation">Journal of Pharmaceutical Sciences, 2023</p>
+            </div>
+
+            <div class="research-card">
+                <h4>Rapid Onset Time</h4>
+                <p>Nano-encapsulated cannabinoids demonstrate onset times of 5-20 minutes compared to 30-180 minutes for standard edibles, providing users with predictable control.</p>
+                <p class="citation">Cannabis and Cannabinoid Research, 2024</p>
+            </div>
+
+            <div class="research-card">
+                <h4>Reduced Respiratory Risk</h4>
+                <p>Oral cannabis consumption eliminates exposure to harmful combustion byproducts present in marijuana smoke, including tar and carcinogens.</p>
+                <p class="citation">American Lung Association, 2025</p>
+            </div>
+
+            <div class="research-card">
+                <h4>Consistent Dosing</h4>
+                <p>Pharmaceutical-grade capsule formulations provide dose-to-dose consistency within ±5%, compared to ±25% variability in artisanal edibles.</p>
+                <p class="citation">Journal of Cannabis Therapeutics, 2024</p>
+            </div>
+
+            <div class="research-card">
+                <h4>Extended Duration</h4>
+                <p>Hepatic first-pass metabolism of oral cannabinoids produces 11-hydroxy-THC, which crosses the blood-brain barrier more effectively, resulting in longer-lasting effects (6-8 hours).</p>
+                <p class="citation">Clinical Pharmacology & Therapeutics, 2023</p>
+            </div>
+
+            <div class="research-card">
+                <h4>Patient Preference</h4>
+                <p>In surveys of medical cannabis patients, 73% preferred tablets/capsules for their simplicity, discretion, and ease of regular dosing compared to other delivery methods.</p>
+                <p class="citation">Medical Cannabis Patient Survey, 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Section -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Pharmaceutical-Grade Quality</h2>
+            <p>Every batch meets the highest standards in the industry</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-visual">
+                <div class="diagram">
+                    <h4 style="text-align: center; color: #2c3e50; margin-bottom: 2rem;">Our Quality Process</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">1</div>
+                            <div class="timeline-content">
+                                <h4>Source Verification</h4>
+                                <p>Premium THC isolate from certified cultivators</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-content">
+                                <h4>Nano-Emulsification</h4>
+                                <p>Proprietary process in GMP-certified facilities</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-content">
+                                <h4>Third-Party Testing</h4>
+                                <p>Independent labs test for potency & purity</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">4</div>
+                            <div class="timeline-content">
+                                <h4>Certified Release</h4>
+                                <p>Only products meeting our standards reach you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-text">
+                <h3>Why Quality Matters</h3>
+                <p>The cannabis industry is plagued by inconsistency. Homemade edibles, dispensary gummies, and flower products can vary wildly in potency—even within the same batch.</p>
+                <p><strong>Clarity is different.</strong> We manufacture our capsules using the same Good Manufacturing Practices (GMP) that pharmaceutical companies follow for prescription drugs.</p>
+                <ul>
+                    <li>Every batch tested by independent ISO-certified labs</li>
+                    <li>Certificate of Analysis (COA) included with every bottle</li>
+                    <li>Tested for potency, pesticides, heavy metals, and microbials</li>
+                    <li>±5% consistency guarantee on THC content</li>
+                    <li>Child-resistant, tamper-evident packaging</li>
+                </ul>
+                <p>When you take Clarity, you know exactly what you're getting—every single time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo" style="margin-bottom: 1rem;">Clarity</div>
+        <p>&copy; 2026 Clarity Wellness. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">This product contains THC and is intended for adults 21+.</p>
+    </footer>
+</body>
+</html>
