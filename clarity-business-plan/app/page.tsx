@@ -9,12 +9,13 @@ export default function Home() {
             ClarityRx
           </p>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Personalized THC microdosing for adults 50–75.
+            THC microdosing for people who don&apos;t call themselves “stoners”.
           </h1>
           <p className="max-w-2xl text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
-            This interactive demo lets you click through the core ClarityRx app flows:
-            onboarding, dosing logs, your dose diary, and a simple assistant chat —
-            all powered by realistic dummy data.
+            ClarityRx is building a calm, clinical-grade experience around gentle THC
+            capsules and a private outcomes diary for people who treat cannabis as a tool,
+            not an identity. This demo lets you click through the core flows we&apos;re
+            designing for the real app.
           </p>
         </header>
 
